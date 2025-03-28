@@ -1,0 +1,21 @@
+services:
+  image-processing:
+    build: . # Build the Docker image from the Dockerfile in the current directory
+    container_name: comic_ocr_dev # Assign a name to the running container
+    ports:
+      - "8888:8888" # Map host port 8888 to container port 8888 (for Jupyter)
+    volumes:
+      # Mount local directories into the container for persistent storage and code development
+      - ./notebooks:/app/notebooks # Mount local 'notebooks' folder to container's '/app/notebooks'
+      - ./data:/app/data         # Mount local 'data' folder (for your comic images) to container's '/app/data'
+      - ./src:/app/src           # Mount local 'src' folder (for Python modules) to container's '/app/src'
+      - ~/Dilbert_1989-2023_complete:/app/comic_images
+    working_dir: /app # Set the default working directory inside the container
+    # Optional: Add environment variables if needed by your scripts
+    # environment:
+    #   - MY_VARIABLE=some_value
+    # Keep the container running (useful for interactive sessions or background tasks)
+    # The CMD in the Dockerfile already starts Jupyter, so this isn't strictly needed
+    # unless you override the command or want it to explicitly stay running if Jupyter fails.
+    # tty: true
+    # stdin_open: true

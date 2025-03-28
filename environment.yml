@@ -1,0 +1,33 @@
+name: imageproc_env # Name of the conda environment
+channels:
+  - conda-forge # Use conda-forge for broader package availability
+  - defaults
+dependencies:
+  # Core Python version
+  - python=3.10 # Specify a Python version for reproducibility
+
+  # Data Science & Numerics
+  - numpy
+  - pandas
+  - scikit-learn
+  - scipy
+
+  # Image Processing
+  - opencv # OpenCV library
+  - scikit-image # Additional image processing algorithms
+  - pillow # PIL fork, often needed by other libraries
+
+  # OCR
+  - pytesseract # Python wrapper for Tesseract OCR engine
+
+  # Development & Notebooks
+  - jupyter # Classic Jupyter Notebook
+  # - jupyterlab # Uncomment if you prefer JupyterLab
+  - matplotlib # For plotting and displaying images in notebooks
+  - tqdm # Progress bars for loops
+
+  # Utilities
+  - pip # Include pip for any packages not found on conda channels
+  # - pip:
+  #   - package-only-on-pip
+  
