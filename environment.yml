@@ -19,6 +19,7 @@ dependencies:
 
   # OCR
   - pytesseract # Python wrapper for Tesseract OCR engine
+  - pyspellchecker
 
   # Development & Notebooks
   - jupyter # Classic Jupyter Notebook
@@ -30,4 +31,3 @@ dependencies:
   - pip # Include pip for any packages not found on conda channels
   # - pip:
   #   - package-only-on-pip
-  
