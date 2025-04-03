@@ -9,4 +9,7 @@ stop:
 
 shell:
 	docker-compose exec image-processing bash
-	
+
+clean:
+	docker image rm comic-to-text-image-processing
+

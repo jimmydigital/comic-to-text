@@ -19,7 +19,7 @@ This project sets up a Dockerized development environment using Miniconda for pr
     ├── .dockerignore
     ├── README.md
     ├── notebooks/   <-- Create this directory for your Jupyter notebooks
-    ├── data/        <-- Create this directory and place your comic image folders inside
+    ├── data/        <-- Create this directory and place your comic image folders inside (not included)
     └── src/         <-- Create this directory for any custom Python modules
     ```
 
@@ -29,23 +29,18 @@ This project sets up a Dockerized development environment using Miniconda for pr
 ## Running the Environment
 
 1.  **Build and Start:**
-    Open a terminal in the project root directory and run:
-    ```bash
-    docker-compose up --build -d
-    ```
-    * `--build`: Forces Docker to rebuild the image if the `Dockerfile` or related files have changed.
-    * `-d`: Runs the container in detached mode (in the background).
+    make build
+    make run
 
 2.  **Access Jupyter Notebook:**
     Open your web browser and navigate to `http://localhost:8888` or `http://127.0.0.1:8888`. You should see the Jupyter Notebook interface. Since we disabled token/password in the `Dockerfile` for local convenience, it should open directly.
 
 3.  **Start Coding:**
     * Create new notebooks inside the `notebooks/` directory via the Jupyter interface.
-    * Your comic images will be accessible within the container at `/app/data/`.
+    * Your comic images (not included) will be accessible within the container at `/app/data/`.
     * You can write reusable Python code in files within the `src/` directory and import them into your notebooks (e.g., `from src import my_module`).
 
 ## Stopping the Environment
 
-To stop the running container:
-```bash
-docker-compose down
+make stop
+
