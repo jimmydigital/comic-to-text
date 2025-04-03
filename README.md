@@ -29,18 +29,20 @@ This project sets up a Dockerized development environment using Miniconda for pr
 ## Running the Environment
 
 1.  **Build and Start:**
+    ```
     make build
     make run
+    ```
 
-2.  **Access Jupyter Notebook:**
+3.  **Access Jupyter Notebook:**
     Open your web browser and navigate to `http://localhost:8888` or `http://127.0.0.1:8888`. You should see the Jupyter Notebook interface. Since we disabled token/password in the `Dockerfile` for local convenience, it should open directly.
 
-3.  **Start Coding:**
+4.  **Start Coding:**
     * Create new notebooks inside the `notebooks/` directory via the Jupyter interface.
     * Your comic images (not included) will be accessible within the container at `/app/data/`.
     * You can write reusable Python code in files within the `src/` directory and import them into your notebooks (e.g., `from src import my_module`).
 
 ## Stopping the Environment
-
+```
 make stop
-
+```
